@@ -15,7 +15,7 @@ const Login = () => {
     setError(null); // Clear previous errors
 
     try {
-      const response = await axios.post('http://localhost:7000/api/auth/v1/login', { email, password });
+      const response = await axios.post('https://nexorand-89p4.onrender.com/api/auth/v1/login', { email, password });
       const userData = response.data;
       login(userData); // Set the user in context and localStorage
       navigate('/'); // Redirect to home or dashboard after login

@@ -29,7 +29,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:7000/api/auth/v1/register', formData);
+      const response = await axios.post('https://nexorand-89p4.onrender.com/api/auth/v1/register', formData);
 
       if (response.data.success) {
         // console.log("Registered user:", response.data.data); // Check user data

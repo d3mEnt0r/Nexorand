@@ -10,7 +10,7 @@ export const LeaderboardProvider = ({ children }) => {
   // Fetch all users to display on leaderboard and home page
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:7000/api/user/v1/get-users');
+      const response = await axios.get('https://nexorand-89p4.onrender.com/api/user/v1/get-users');
       if (response.data.success) {
         setUsers(response.data.data);
       }
@@ -22,7 +22,7 @@ export const LeaderboardProvider = ({ children }) => {
   // Function to increment points of a specific user
   const incrementPoints = async (email) => {
     try {
-      const response = await axios.patch(`http://localhost:7000/api/user/v1/claim-points`, { email });
+      const response = await axios.patch(`https://nexorand-89p4.onrender.com/api/user/v1/claim-points`, { email });
       if (response.data.success) {
         fetchUsers(); // Re-fetch the updated users list
         addClaimMessage(response.data.message + ` for ${response.data.data.firstName}`); // Add message to the queue

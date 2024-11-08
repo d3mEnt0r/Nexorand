@@ -14,7 +14,7 @@ const Leaderboard = () => {
   // Function to fetch user history based on the selected time range
   const fetchHistory = async (range) => {
     try {
-      const response = await axios.get(`http://localhost:7000/api/user/v1/your-${range}-history`); // Adjust the API endpoint to fetch history by range (daily, weekly, monthly)
+      const response = await axios.get(`https://nexorand-89p4.onrender.com/api/user/v1/your-${range}-history`); // Adjust the API endpoint to fetch history by range (daily, weekly, monthly)
       if (response.data.success) {
         setHistory(response.data.data);
         // console.log(response.data);
@@ -27,7 +27,7 @@ const Leaderboard = () => {
   // Fetch user history
   const fetchUserHistory = async (userId) => {
     try {
-      const response = await axios.post(`http://localhost:7000/api/user/v1/your-history`, { userId });
+      const response = await axios.post(`https://nexorand-89p4.onrender.com/api/user/v1/your-history`, { userId });
       if (response.data.success) {
         setHistory(response.data.data); // Ensure the response data is correctly set
         setSelectedUser(userId);
